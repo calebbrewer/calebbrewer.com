@@ -1,0 +1,130 @@
+main.me {
+	.fullpage-img {
+		background-image: url("../img/caleb-brewer-v2.png");
+		//opacity: 0.9;
+	}
+
+	.name {
+		position: absolute;
+		z-index: 100;
+		bottom: 5%;
+		font-weight: 300;
+		text-align: center;
+		width: 100%;
+		transition: bottom 0.7s, margin-bottom 0.7s;
+		transition-timing-function: ease;      
+	  
+		h1 {
+			font-size: 4.8em;  
+	    
+			@include bp(step3) {
+				font-size: 4.6em;
+			}         
+
+			span {
+				color: $blue;
+
+				@include bp(step2) {
+					display: none;
+				}          
+			}     
+		}
+	  
+		a.button {
+			display: inline-block;
+			vertical-align: top;
+			margin-top: $pad*2;
+		}
+	}
+
+	.about-skills {
+		position: relative;
+		bottom: -98%;
+		height: 100%;
+		opacity: 0;
+		overflow: hidden;
+		transition: opacity 1s, bottom 0.8s;
+		transition-delay: 0.05s;
+
+		p {
+			text-align: center;
+		}
+        
+        h3 {
+            margin-top: $pad*4;
+        }
+
+		.about {
+            position: relative;
+			z-index: 1;
+            background-color: $white;
+            //@include shadow(2);
+		}
+
+		.skills {
+            position: relative;
+            z-index: 0;
+			color: $white;
+			min-height: 100%;
+			background-color: $gray-blue;
+            
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                font-size: 0.9em; 
+                list-style-type: none;
+                max-width: 1920px;
+                margin: 0 auto;
+            }
+            
+            li {
+                text-align: center;
+                padding: $pad;
+            }
+            
+            svg, img {
+                display: block;
+                fill: $blue;
+                width: 100px;
+                margin: 0 auto;
+            }
+		}
+	}	
+}
+
+main.about-skills-active {
+	min-height: 1000px; //This sucks! I could fix it if IE 11 supported flex: 1	
+
+	.name {
+		bottom: 100%;
+		margin-bottom: -252px;
+
+		h1 {
+			font-size: 3.5em;
+		}
+	}
+
+	.about-skills {
+		bottom: 0;
+		opacity: 1;
+		transition: opacity 0.5s, bottom 0.7s;
+	}
+
+	.fullpage-img {
+		bottom: 100%;
+		left: 50%;
+		width: 1050px;
+		height: 950px;
+		margin: 0  0 -360px -525px;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: auto 950px;
+		transition: bottom 0.8s, height 0.8s, margin-bottom 0.8s, background-size 0.8s;
+		transition-delay: 0.1s;
+
+		@include bp(step1) {
+			margin-bottom: -350px
+		}	
+	}	
+}

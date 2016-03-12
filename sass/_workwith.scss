@@ -1,0 +1,16 @@
+main.work-with {
+    min-height: 850px;
+    background-image: url("../img/work-with-me.jpg");
+    background-size: cover;    
+    
+    h1 {
+        //color: $blue;
+    }    
+    
+	form {
+        width: 100%;
+		max-width: 480px;
+		margin: 0 auto;
+        padding: 0 $pad;
+	}
+}

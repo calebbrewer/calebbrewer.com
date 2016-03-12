@@ -1,0 +1,25 @@
+@mixin bp($point) {	
+	@if $point == step1 {
+		@media (max-width: 1024px) { @content; }
+	}
+	@else if $point == step2 {
+		@media (max-width: 700px) { @content; }
+	}
+	@else if $point == step3 {
+		@media (max-width: 400px)  { @content; }
+	}
+	@else if $point == step4 {
+		@media (max-width: 450px)  { @content; }
+	}	
+}
+
+//Colors
+$white: #f8f8f8;
+$gray: rgba(47, 55, 56, 1);
+$gray-blue: rgba(100, 118, 120, 1);
+$blue: rgba(159, 188, 191, 1);
+
+//Spacing
+$pad: 16px;
+//Height of the main site header
+$header-height: 55px;
