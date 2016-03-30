@@ -1,7 +1,6 @@
 'use strict';
 
 /* Controllers */
-
 angular.module('caleb.controllers', []) 
 	.controller('mainCtrl', ['$scope', '$route', '$window', '$rootScope', function($scope, $route, $window, $rootScope) {	
 		//Break Points
@@ -40,6 +39,22 @@ angular.module('caleb.controllers', [])
 	.controller('workCtrl', ['$scope', function($scope) {
 		$scope.$parent.page = 'work';
 	}])
-	.controller('workWithCtrl', ['$scope', function($scope) {
+	.controller('workWithCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.$parent.page = 'work-with';
+        
+        $scope.submit = function() {
+            var message = {
+                name: $scope.name,
+                email: $scope.email,
+                body: $scope.msg
+            };
+            
+            $http({method: 'POST', url: 'https://yvz2gs7n8h.execute-api.us-east-1.amazonaws.com/v1/message', data: message, headers: {'Content-Type': 'application/json'}}).then(function successCallback(response) {
+               $scope.thanks = true;
+               console.log("You just sent me this message. Thanks! Oh and I'm glad your looking at my Code.", response.data);             
+			},
+            function errorCallback(response) {
+                console.log('error', response);
+			});
+        };
 	}]);	

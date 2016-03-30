@@ -3,23 +3,27 @@
 </header>
 
 <section class="main-content">
-	<form>
+	<form data-ng-submit="submit()" data-ng-hide="thanks">
 		<ul>
-			<li data-ng-click="name = true" data-ng-class="{active: name}">
+			<li data-ng-click="nameActive = true" data-ng-class="{active: nameActive}">
 				<label for="name"><span>Name</span></label>
-				<input type="text" name="name" required>
+				<input type="text" name="name" required data-ng-model="name">
 			</li>
-			<li data-ng-click="email = true" data-ng-class="{active: email}">
+			<li data-ng-click="emailActive = true" data-ng-class="{active: emailActive}">
 				<label class="gray-blue" for="email"><span>Email</span></label>
-				<input type="email" name="email" required>		
+				<input type="email" name="email" required data-ng-model="email">		
 			</li>
-			<li data-ng-click="message = true" data-ng-class="{active: message}">
+			<li data-ng-click="messageActive = true" data-ng-class="{active: messageActive}">
 				<label class="blue" for="message"><span data-ng-hide="message">Message</span><span data-ng-show="message">MSG</span></label>
-				<textarea name="message" id="" rows="4" required></textarea>	
+				<textarea name="message" id="" rows="4" required data-ng-model="msg"></textarea>	
 			</li>
 			<li>
 				<input type="submit" value="Send">
 			</li>
 		</ul>
 	</form>
+    <div class="thanks" data-ng-show="thanks">
+        <img src="img/thanks.gif" alt="THANK YOU!!!">
+        <h2>Thank you!!!</h2>
+    </div>
 </section>

@@ -13,4 +13,18 @@ main.work-with {
 		margin: 0 auto;
         padding: 0 $pad;
 	}
+    
+    .thanks {
+        h2 {
+            color: $white;
+            margin-top: 32px;
+        }
+        
+        img {
+            display: block;
+            width: 75%;
+            max-width: 800px;
+            margin: 0 auto; 
+        }
+    }
 }

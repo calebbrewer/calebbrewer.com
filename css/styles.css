@@ -1056,6 +1056,18 @@ main.work-with form {
   margin: 0 auto;
   padding: 0 16px;
 }
+/* line 18, ../sass/_workwith.scss */
+main.work-with .thanks h2 {
+  color: #f8f8f8;
+  margin-top: 32px;
+}
+/* line 23, ../sass/_workwith.scss */
+main.work-with .thanks img {
+  display: block;
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 /* line 2, ../sass/_animations.scss */
 .at-view-fade-in.ng-enter {
