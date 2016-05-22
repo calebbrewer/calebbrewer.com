@@ -34,3 +34,8 @@ button, .button, [type=submit] {
         background-color: rgba(159, 188, 191, 0.9);  
     }
 }
+
+.ng-touched.ng-invalid {
+    color: white;
+    background: #ff7d7d;
+}

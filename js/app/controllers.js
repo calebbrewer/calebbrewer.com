@@ -38,6 +38,27 @@ angular.module('caleb.controllers', [])
 	}])
 	.controller('workCtrl', ['$scope', function($scope) {
 		$scope.$parent.page = 'work';
+		
+		$scope.clients = [
+			{
+				name: 'MapleTronics',
+				projects: [
+					{
+						title: 'mapletronics.com',
+						images: [],
+						url: 'mapletronics.com',
+						tags: ['web design', 'graphic design', 'programing', 'front end']	
+					},
+					{
+						title: 'MapleTronics Business Cards',
+						images: [
+							{title: '', alt: 'MapleTronics Business Cards', url: ''}
+						],
+						tags: ['business cards', 'graphic design', 'layout']
+					}
+				]
+			}	
+		];
 	}])
 	.controller('workWithCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.$parent.page = 'work-with';

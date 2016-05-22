@@ -7,15 +7,15 @@
 		<ul>
 			<li data-ng-click="nameActive = true" data-ng-class="{active: nameActive}">
 				<label for="name"><span>Name</span></label>
-				<input type="text" name="name" required data-ng-model="name">
+				<input type="text" name="name" required data-ng-required="true" data-ng-model="name">
 			</li>
 			<li data-ng-click="emailActive = true" data-ng-class="{active: emailActive}">
 				<label class="gray-blue" for="email"><span>Email</span></label>
-				<input type="email" name="email" required data-ng-model="email">		
+				<input type="email" name="email" required data-ng-required="true" data-ng-model="email">		
 			</li>
 			<li data-ng-click="messageActive = true" data-ng-class="{active: messageActive}">
 				<label class="blue" for="message"><span data-ng-hide="messageActive">Message</span><span data-ng-show="messageActive">MSG</span></label>
-				<textarea name="message" id="" rows="4" required data-ng-model="msg"></textarea>	
+				<textarea name="message" id="" rows="4" required data-ng-required="true" data-ng-model="msg"></textarea>	
 			</li>
 			<li>
 				<input type="submit" value="Send">
