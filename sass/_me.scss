@@ -1,4 +1,4 @@
-main.me {
+main.me {	
 	.fullpage-img {
 		background-image: url("../img/caleb-brewer-v2.png");
 		//opacity: 0.9;
@@ -38,9 +38,11 @@ main.me {
 	}
 
 	.about-skills {
+		display: flex;
+		flex-direction: column;
 		position: relative;
 		bottom: -98%;
-		//height: 100%;
+		height: 100%;
 		opacity: 0;
 		overflow: hidden;
 		transform: translate(0, 98%);
@@ -63,6 +65,7 @@ main.me {
 		}
 
 		.skills {
+			flex-grow: 1;
             position: relative;
             z-index: 0;
 			color: $white;
