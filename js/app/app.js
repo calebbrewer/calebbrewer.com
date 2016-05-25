@@ -5,6 +5,7 @@
 angular.module('caleb', [
 	'ngRoute',
 	'ngAnimate',
+	'hj.imagesLoaded',
 	'caleb.filters',
 	'caleb.services',
 	'caleb.directives',

@@ -31,7 +31,21 @@ angular.module('caleb.controllers', [])
 
 		//Reset some things on route change
 		$scope.$on('$routeChangeSuccess', function(next, current) { 
-		});			
+		});
+		
+		$scope.imgLoadedEvents = {
+
+			always: function(instance) {
+				// Do stuff
+			},
+			done: function(instance) {
+				angular.element(instance.elements[0]).addClass('background-loaded');
+				console.log(instance);
+			},
+			fail: function(instance) {
+				// Do stuff
+			}
+		};					
 	}])	
 	.controller('meCtrl', ['$scope', function($scope) {
 		$scope.$parent.page = 'me';

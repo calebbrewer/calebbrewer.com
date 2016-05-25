@@ -21,4 +21,4 @@ angular.module('caleb.directives', []).
 				});
 			}
 		};
-	});	
+	});		
