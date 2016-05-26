@@ -22,15 +22,15 @@ module.exports = function(grunt) {
       minify: {
         expand: true,
         cwd: 'css',
-        src: ['*.css'],
-        dest: 'web_build/css',
-        ext: '.min.css'
+        src: ['styles.css'],
+        dest: 'prod/css',
+        //ext: '.min.css'
       }
     },
     uglify: {
       options: {
         mangle: {
-          except: ['jQuery']
+          except: ['']
         }
       },
       my_target: {
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, src: ['404.html'], dest: 'web_build/', filter: 'isFile'},
+          {expand: true, src: ['bower_components/**', 'css/**', 'img/**', 'js/**', 'views/**', 'index.html'], dest: 'prod/', filter: 'isFile'},
         ]
       }
     },
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
         },
       },
     },      
-    clean: ['web_build/**/*.{html,md}']
+    clean: ['prod/**']
   });
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -81,5 +81,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['compass', 'autoprefixer', 'svgstore']);
 
   //Build
-  grunt.registerTask('build', ['copy', 'cssmin', 'uglify']);
+  grunt.registerTask('build', ['clean', 'copy']);
 };
