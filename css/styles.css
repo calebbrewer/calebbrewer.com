@@ -181,9 +181,7 @@ svg:not(:root) {
  */
 /* line 182, ../sass/_normalize.scss */
 hr {
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 
@@ -309,9 +307,7 @@ input {
 /* line 305, ../sass/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -337,8 +333,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -412,8 +406,6 @@ th {
 
 /* line 4, ../sass/styles.scss */
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -432,7 +424,7 @@ body {
   font-weight: 300;
   font-size: 1.3em;
   letter-spacing: 0.1em;
-  height: 100%;
+  min-height: 100%;
   background: #ffffff;
 }
 @media (max-width: 400px) {
@@ -568,7 +560,6 @@ form ul li label span {
   left: 0;
   width: 100%;
   -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
   pointer-events: none;
 }
@@ -781,8 +772,7 @@ main {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  -webkit-box-shadow: 0px 1px 7px 1px black;
-          box-shadow: 0px 1px 7px 1px black;
+  box-shadow: 0px 1px 7px 1px black;
   -webkit-transition: opacity 0.5s;
           transition: opacity 0.5s;
 }
@@ -806,8 +796,7 @@ main .main-content {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
-  -webkit-background-size: auto 100%;
-          background-size: auto 100%;
+  background-size: auto 100%;
   overflow: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.5s, bottom 0.5s, margin-bottom 0.5s, background-size 0.5s;
@@ -906,21 +895,18 @@ main.me .name a.button {
 /* line 39, ../sass/_me.scss */
 main.me .about-skills {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
   bottom: -98%;
-  height: 100%;
+  min-height: 100%;
   opacity: 0;
   overflow: hidden;
   -webkit-transform: translate(0, 98%);
-      -ms-transform: translate(0, 98%);
           transform: translate(0, 98%);
   -webkit-transition: opacity 1s, bottom 0.8s, -webkit-transform 0.8s;
           transition: opacity 1s, bottom 0.8s, transform 0.8s;
@@ -944,7 +930,6 @@ main.me .about-skills .about {
 /* line 66, ../sass/_me.scss */
 main.me .about-skills .skills {
   -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   position: relative;
@@ -955,14 +940,11 @@ main.me .about-skills .skills {
 /* line 74, ../sass/_me.scss */
 main.me .about-skills .skills ul {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 0.9em;
@@ -1001,7 +983,6 @@ main.about-skills-active .about-skills {
   bottom: 0;
   opacity: 1;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   -webkit-transition: opacity 0.5s, bottom 0.7s, -webkit-transform 0.7s;
           transition: opacity 0.5s, bottom 0.7s, transform 0.7s;
@@ -1027,8 +1008,7 @@ main.about-skills-active .fullpage-img {
 main.work-with {
   min-height: 850px;
   background-image: url("../img/work-with-me.jpg");
-  -webkit-background-size: cover;
-          background-size: cover;
+  background-size: cover;
 }
 /* line 10, ../sass/_workwith.scss */
 main.work-with form {
@@ -1052,7 +1032,7 @@ main.work-with .thanks img {
 
 /* line 2, ../sass/_animations.scss */
 .at-view-fade-in.ng-enter {
-  -webkit-transition-property: opacity, -webkit-filter;
+  -webkit-transition-property: opacity, -webkit-filter, opacity, filter;
           transition-property: opacity, filter;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -1074,7 +1054,7 @@ main.work-with .thanks img {
 
 /* line 18, ../sass/_animations.scss */
 .at-view-fade-out.ng-leave {
-  -webkit-transition-property: opacity, -webkit-filter;
+  -webkit-transition-property: opacity, -webkit-filter, opacity, filter;
           transition-property: opacity, filter;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -1121,8 +1101,7 @@ main.work-with .thanks img {
  ========================================================================== */
 /* line 12, ../sass/_helpers.scss */
 .shadow {
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 /* line 16, ../sass/_helpers.scss */

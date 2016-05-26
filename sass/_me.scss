@@ -41,7 +41,7 @@ main.me {
 		flex-direction: column;
 		position: relative;
 		bottom: -98%;
-		height: 100%;
+		min-height: 100%;
 		opacity: 0;
 		overflow: hidden;
 		transform: translate(0, 98%);
