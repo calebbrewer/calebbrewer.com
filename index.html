@@ -2,13 +2,12 @@
 <html lang="en" ng-app="caleb">
     <head>
         <meta charset="utf-8">
-        <base href="/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" >
         <meta content="width=device-width, initial-scale=1.0, minimal-ui" name="viewport">
         <title></title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <!--Font-->
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>                
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>                
         
         <!-- AngularJS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
@@ -27,12 +26,12 @@
         <script src="js/app/directives.js"></script>        
     </head>
     <body data-ng-controller="mainCtrl" data-ng-class="{'main-nav-active': mainNavOpen}" data-ng-init="mainNavOpen = false">
-        <div style="display: none;" data-ng-include="'img/sprite.svg'"></div>
+        <div style="display: none;" data-ng-include="'./img/sprite.svg'"></div>
         <header id="site-header" class="site-header">
             <nav class="main-nav" role="navigation">    
-                <a class="me" href data-ng-href="/"><span>Caleb Brewer</span></a> 
-                <a class="my-work" href="/work/"><span>Work I've Done</span></a>
-                <a class="work-with" href data-ng-href="/workwith/"><span>Work with Me</span></a>  
+                <a class="me" href data-ng-href="/" data-ng-click="mainNavOpen = false"><span>Caleb Brewer</span></a> 
+                <a class="my-work" href data-ng-href="/work/" data-ng-click="mainNavOpen = false"><span>Work I've Done</span></a>
+                <a class="work-with" href data-ng-href="/workwith/" data-ng-click="mainNavOpen = false"><span>Work with Me</span></a>  
             </nav>
             
             <button class="open-main-nav" ng-hide="mainNavOpen" ng-click="mainNavOpen = true">Open</button>

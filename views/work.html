@@ -1,3 +1,23 @@
 <header>
-	<h1>I will have this page up soon.</h1>
+	<h1>Projects I've Worked On</h1>
 </header>
+<section class="main-content">
+	<ul class="projects">
+		<li data-ng-repeat="project in projects">
+			<div class="overlay">
+				<button class="show-discription clean-button">
+					<svg viewBox="0 0 100 100">
+						<use xlink:href="#info"></use>
+					</svg>
+				</button>				
+				<section class="info">
+					<h2>
+						<span>{{ project.title }}</span>						
+					</h2>
+					<p class="discription">{{ project.discription }}</p> 					
+				</section>
+			</div>
+			<img class="hero" data-ng-src="img/work/{{ project.images[0].src }}" alt="{{ project.images[0].alt }}">
+		</li>
+	</ul>
+</section>

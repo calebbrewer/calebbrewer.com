@@ -40,7 +40,6 @@ angular.module('caleb.controllers', [])
 			},
 			done: function(instance) {
 				angular.element(instance.elements[0]).addClass('background-loaded');
-				console.log(instance);
 			},
 			fail: function(instance) {
 				// Do stuff
@@ -53,25 +52,53 @@ angular.module('caleb.controllers', [])
 	.controller('workCtrl', ['$scope', function($scope) {
 		$scope.$parent.page = 'work';
 		
-		$scope.clients = [
+		$scope.projects = [
+			/*
 			{
-				name: 'MapleTronics',
-				projects: [
-					{
-						title: 'mapletronics.com',
-						images: [],
-						url: 'mapletronics.com',
-						tags: ['web design', 'graphic design', 'programing', 'front end']	
-					},
-					{
-						title: 'MapleTronics Business Cards',
-						images: [
-							{title: '', alt: 'MapleTronics Business Cards', url: ''}
-						],
-						tags: ['business cards', 'graphic design', 'layout']
-					}
-				]
-			}	
+				title: 'MapleTronics Website',
+				client: 'MapleTronics',
+				images: [],
+				src: 'mapletronics.com',
+				tags: ['web design', 'graphic design', 'programing', 'front end']	
+			},
+			{
+				title: 'MapleTronics Business Cards',
+				client: 'MapleTronics',
+				images: [
+					{title: '', alt: 'MapleTronics Business Cards', src: ''}
+				],
+				tags: ['business cards', 'graphic design', 'layout']
+			},
+			*/
+			{
+				title: 'MapleTronics Car Wrap Design',
+				client: 'MapleTronics',
+				images: [
+					{title: '', alt: 'MapleTronics Versa Design Image 1', src: 'mapletronics-car-wrap1.jpg'},
+					{title: '', alt: 'MapleTronics Versa Design Image 2', src: 'mapletronics-car-wrap2.jpg'},
+					{title: '', alt: 'MapleTronics Versa Design Image 1', src: 'mapletronics-car-wrap3.jpg'},
+					{title: '', alt: 'MapleTronics Versa Design Image 2', src: 'mapletronics-car-wrap4.jpg'}					
+				],
+				discription: "It was pretty intimidating laying out something of this scale, but by photographing the car and tracing the body lines I was able to show the client and the printshop exactly what the car should and would look like.",
+				tags: ['car wraps', 'graphic design', 'layout']
+			},
+			{
+				title: 'Antebellum Sweet Black Tea Bottle Label',
+				client: 'Antebellum Tea',
+				images: [
+					{title: '', alt: 'Antebellum Sweet Black Tea Bottle Label Design', src: 'antebellum-sweet-black-tea1.jpg'},				
+				],
+				discription: "This was a fun project and a great beverage. Check out antebellumsweetblacktea.com and get a taste of the south.",
+				tags: ['labels', 'graphic design']
+			},
+			{
+				title: 'TaylorMade Adventures Logo',
+				client: 'TaylorMade Adventures',
+				images: [
+					{title: '', alt: 'TaylorMade Adventures Logo', src: 'taylormade-adventures1.jpg'},				
+				],
+				tags: ['labels', 'graphic design']
+			}									
 		];
 	}])
 	.controller('workWithCtrl', ['$scope', '$http', function($scope, $http) {
@@ -84,7 +111,7 @@ angular.module('caleb.controllers', [])
                 body: $scope.msg
             };
             
-            $http({method: 'POST', url: 'https://yvz2gs7n8h.execute-api.us-east-1.amazonaws.com/v1/message', data: message, headers: {'Content-Type': 'application/json'}}).then(function successCallback(response) {
+            $http({method: 'POST', src: 'https://yvz2gs7n8h.execute-api.us-east-1.amazonaws.com/v1/message', data: message, headers: {'Content-Type': 'application/json'}}).then(function successCallback(response) {
                $scope.thanks = true;
                console.log("You just sent me this message. Thanks! Oh and I'm glad your looking at my Code.", response.data);             
 			},

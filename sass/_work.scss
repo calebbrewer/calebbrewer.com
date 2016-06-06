@@ -1,0 +1,99 @@
+main.work {
+    height: auto;
+    //min-height: 100%;
+    
+    >header {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+        z-index: 1;
+        //background-image: url(../img/work-header.jpg);
+        //background-position: center;
+        //@include shadow(2);
+    }
+    
+    .main-content {
+        position: relative;
+        z-index: 0;
+    }
+    
+    img {
+        display: block;
+    }
+    
+    .projects {
+        //display: flex;
+        //flex-direction: column;
+        
+        li {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 33.33%;
+        }
+        
+        p {
+            margin: 0;
+        }
+        
+        h2 {
+            text-align: left;
+            
+            @include bp(step1) {
+                font-size: 1.3em;
+                margin: 0;
+            }
+            
+            @include bp(step2) {
+                font-size: 0.9em;
+            }            	            
+        }
+        
+        .overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: $white;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 75%);
+            
+            @include bp(step1) {
+                //height: 20%;
+                background: none
+            }            
+        }
+        
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px;
+           
+            @include bp(step1) {
+                padding: 8px;
+                background: rgba(0, 0, 0, 0.50);
+            }                       
+        }
+        
+        .discription {
+            @include bp(step1) {
+                display: none;
+            }             
+        }
+        
+        .show-discription {
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 22px;
+            height: 22px;
+        }        
+        
+        img.hero {
+            width: 100%
+        }
+    }
+}

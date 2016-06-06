@@ -1,4 +1,4 @@
-main.me {	
+main.me {
 	>header {
 		min-height: 300px;
 	}
@@ -39,12 +39,13 @@ main.me {
 	.about-skills {
 		display: flex;
 		flex-direction: column;
+		flex-grow: 1;
 		position: relative;
-		bottom: -98%;
+		bottom: -100%;
 		min-height: 100%;
 		opacity: 0;
 		overflow: hidden;
-		transform: translate(0, 98%);
+		transform: translate(0, 100%);
 		transition: opacity 1s, bottom 0.8s, transform 0.8s;
 		transition-delay: 0.1s;
 
@@ -97,8 +98,8 @@ main.me {
 }
 
 main.about-skills-active {
-	height: 100%;
-	//overflow: visible;	
+	height: auto;
+	min-height: 100%;
 	
 	.name {
 		bottom: 100%;
@@ -114,6 +115,11 @@ main.about-skills-active {
 		opacity: 1;
 		transform: translate(0, 0);
 		transition: opacity 0.5s, bottom 0.7s, transform 0.7s;
+		
+		svg, img {
+			display: block;
+			padding-bottom: 8px;
+		}
 	}
 
 	.fullpage-img {

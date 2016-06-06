@@ -23,6 +23,7 @@ button, .button, [type=submit] {
     background: rgba(159, 188, 191, 0.7);
     padding: 16px;
     border: none;
+    outline: none;
     cursor: pointer;
     transition: all 0.3s;
 
@@ -32,6 +33,19 @@ button, .button, [type=submit] {
 
     &:hover {
         background-color: rgba(159, 188, 191, 0.9);  
+    }
+    
+    &:active {
+        outline: none;
+    }
+}
+
+button.clean-button {
+    padding: 0;
+    background: none;
+    
+    svg {
+        fill: $blue;
     }
 }
 
