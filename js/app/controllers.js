@@ -100,6 +100,14 @@ angular.module('caleb.controllers', [])
 				tags: ['labels', 'graphic design']
 			}									
 		];
+		
+		$scope.showInfo = function(project) {
+			$scope.popup = {
+				show: true,
+				title: project.title,
+				body: project.discription
+			}
+		};
 	}])
 	.controller('workWithCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.$parent.page = 'work-with';

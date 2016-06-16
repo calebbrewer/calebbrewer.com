@@ -915,13 +915,56 @@ button.clean-button svg {
 }
 
 /* line 52, ../sass/_helpers.scss */
+button.close {
+  position: absolute;
+  z-index: 1000;
+  top: 8px;
+  left: 8px;
+  padding: 8px;
+  opacity: 1;
+  -webkit-transition: all 0.8s;
+          transition: all 0.8s;
+}
+
+/* line 62, ../sass/_helpers.scss */
 .ng-touched.ng-invalid {
   color: white;
   background: #ff7d7d;
 }
 
-/* line 57, ../sass/_helpers.scss */
+/* line 67, ../sass/_helpers.scss */
 .background-loaded {
+  opacity: 1;
+}
+
+/* line 71, ../sass/_helpers.scss */
+div.popup {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 72px;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 88, ../sass/_helpers.scss */
+div.popup p {
+  text-align: center;
+}
+
+/* line 93, ../sass/_helpers.scss */
+div.popup.active {
+  width: 100%;
+  height: 100%;
   opacity: 1;
 }
 
@@ -1177,14 +1220,20 @@ main.work .projects .info {
 }
 /* line 86, ../sass/_work.scss */
 main.work .projects .show-discription {
-  display: block;
+  display: none;
   position: absolute;
   top: 8px;
   right: 8px;
   width: 22px;
   height: 22px;
 }
-/* line 95, ../sass/_work.scss */
+@media (max-width: 1024px) {
+  /* line 86, ../sass/_work.scss */
+  main.work .projects .show-discription {
+    display: block;
+  }
+}
+/* line 99, ../sass/_work.scss */
 main.work .projects img.hero {
   width: 100%;
 }

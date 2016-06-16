@@ -5,7 +5,7 @@
 	<ul class="projects">
 		<li data-ng-repeat="project in projects">
 			<div class="overlay">
-				<button class="show-discription clean-button">
+				<button class="show-discription clean-button" data-ng-show="project.discription" data-ng-click="$parent.showInfo(project)">
 					<svg viewBox="0 0 100 100">
 						<use xlink:href="#info"></use>
 					</svg>
@@ -21,3 +21,8 @@
 		</li>
 	</ul>
 </section>
+<div data-ng-class="{active: popup.show}" class="popup">
+	<button class="close" ng-click="popup.show = false">X</button>
+	<h2>{{ popup.title }}</h2>
+	<p>{{ popup.body }}</p>
+</div>
