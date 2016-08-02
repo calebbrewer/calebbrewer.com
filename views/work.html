@@ -17,7 +17,9 @@
 					<p class="discription">{{ project.discription }}</p> 					
 				</section>
 			</div>
-			<img class="hero" data-ng-src="img/work/{{ project.images[0].src }}" alt="{{ project.images[0].alt }}">
+			<div class="loader images-loaded" images-loaded-events="$parent.imgLoadedEvents">
+				<img class="hero" data-ng-src="img/work/{{ project.images[0].src }}" alt="{{ project.images[0].alt }}">				
+			</div>
 		</li>
 	</ul>
 </section>

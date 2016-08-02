@@ -933,13 +933,42 @@ button.close {
 }
 
 /* line 67, ../sass/_helpers.scss */
-.background-loaded {
+.fullpage-img-loader:after {
+  z-index: -1;
+}
+
+/* line 72, ../sass/_helpers.scss */
+.loader:after, .fullpage-img-loader:after {
+  content: url('data:image/svg+xml;utf8, <svg width="135" height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#9fbcbf"> <rect y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="30" y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="60" width="15" height="140" rx="6"> <animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="90" y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="120" y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect></svg>');
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+/* line 80, ../sass/_helpers.scss */
+.loader img, .fullpage-img-loader img {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, bottom 0.5s, margin-bottom 0.5s, background-size 0.5s;
+          transition: opacity 0.5s, bottom 0.5s, margin-bottom 0.5s, background-size 0.5s;
+}
+
+/* line 86, ../sass/_helpers.scss */
+.loaded {
+  opacity: 1;
+}
+/* line 89, ../sass/_helpers.scss */
+.loaded:after {
+  display: none;
+}
+/* line 93, ../sass/_helpers.scss */
+.loaded img {
   opacity: 1;
 }
 
-/* line 71, ../sass/_helpers.scss */
+/* line 98, ../sass/_helpers.scss */
 div.popup {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 50%;
   right: 0;
@@ -951,17 +980,17 @@ div.popup {
   height: 0;
   padding: 16px;
   background-color: rgba(255, 255, 255, 0.9);
-  padding-top: 72px;
+  padding-top: 64px;
   opacity: 0;
   -webkit-transition: all 0.5s;
           transition: all 0.5s;
 }
-/* line 88, ../sass/_helpers.scss */
+/* line 115, ../sass/_helpers.scss */
 div.popup p {
   text-align: center;
 }
 
-/* line 93, ../sass/_helpers.scss */
+/* line 120, ../sass/_helpers.scss */
 div.popup.active {
   width: 100%;
   height: 100%;

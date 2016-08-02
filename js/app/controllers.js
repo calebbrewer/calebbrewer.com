@@ -34,12 +34,11 @@ angular.module('caleb.controllers', [])
 		});
 		
 		$scope.imgLoadedEvents = {
-
 			always: function(instance) {
 				// Do stuff
 			},
 			done: function(instance) {
-				angular.element(instance.elements[0]).addClass('background-loaded');
+				angular.element(instance.elements[0]).addClass('loaded');
 			},
 			fail: function(instance) {
 				// Do stuff
@@ -108,6 +107,20 @@ angular.module('caleb.controllers', [])
 				body: project.discription
 			}
 		};
+
+		$scope.projectImagesEvents = {
+			always: function(instance) {
+				// Do stuff
+			},
+			done: function(instance) {
+				console.log(instance.elements[0]);
+				angular.element(instance.elements[0]).addClass('loaded');
+				//angular.element(instance.elements[0]).removeClass('loader');
+			},
+			fail: function(instance) {
+				// Do stuff
+			}
+		}		
 	}])
 	.controller('workWithCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.$parent.page = 'work-with';
